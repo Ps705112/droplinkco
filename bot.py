@@ -19,7 +19,7 @@ bot = Client('droplink bot',
 async def start(bot, message):
     await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
-        "I'm a specialised bot for shortening Droplink.co links which can help you earn money by just sharing links. I am made by @ToonsHub2006.")
+        "I'm a Droplink bot for shortening Droplink.co links which can help you earn money by just sharing links. I am made by @Groupdcbots.")
 
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
@@ -27,7 +27,7 @@ async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
         short_link = await get_shortlink(link)
-        await message.reply(f'Here is your [`{short_link}`]({short_link})', quote=True)
+        await message.reply(f'Oii Buddy ! Your Link is Ready \n\nHere is your 👉 [`{short_link}`]({short_link})', quote=True)
     except Exception as e:
         await message.reply(f'Error: {e}', quote=True)
 
